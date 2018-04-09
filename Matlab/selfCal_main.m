@@ -3,8 +3,8 @@
 addpath('Utilities')
 
 % *** Input and output file names *** %
-inFile='LED_cheekCell_comp_misaligned_input.mat';
-outFile='LED_cheekCell_comp_misaligned_output_selfCal.mat';
+inFile='data/LED_cheekCell_comp_misaligned_input.mat';
+outFile='data/LED_cheekCell_comp_misaligned_output_selfCal.mat';
 
 % *** Imaging system parameters *** %
 % Define:
