@@ -113,7 +113,7 @@ metadata.self_cal.na_cal=NA_cal;
 metadata.self_cal.time_cal_s=t_cal;
 metadata.self_cal.DFI=DFI;
 
-data=imgR;
+data=selfCal.data;
 
 save(outFile,'metadata','data');
 
