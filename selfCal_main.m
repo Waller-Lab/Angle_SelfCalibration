@@ -26,8 +26,8 @@ freqUV=selfCal.metadata.source_list.na_design/lambda;
 
 % *** Controls for removing outliers *** %
 removeOut=1; %Whether you want to remove outliers and extend to darkfield (generally a good idea)
-method='rigidScale'; %Option for transformation from original guess to new 
-%guess, used to remove outliers that do not fit that transformation. 
+method='rigidScale'; %Option for transformation from original guess to new
+%guess, used to remove outliers that do not fit that transformation.
 %Possibilities are: 'rigid' (rotation and shift),'rigidScale' (rotation, shift, & scale),
 %'affine'(rotation, shift, scale, & shear), 'projective'
 alpha=2; %Multiplier by stdev to get outliers (usually 2-3)
@@ -121,6 +121,5 @@ save(outFile,'metadata','data');
 figure(); plot(freqUV(:,1),freqUV(:,2),'*',freqUV_cal(:,1),freqUV_cal(:,2),'*'); title('Uncalibrated and calibrated angles, k-space')
 legend('Original','SelfCal');
 
-sliderDisplayImVC2(abs(FI(:,:,~DFI)), cat(3,[freqXY(~DFI,:) radP.*ones(sum(~DFI),1)],[freqXY2(~DFI,:) rad_cal.*ones(sum(~DFI),1)]),{'caxis([0 1e6])','title(''Brightfield Only: (red) Uncalibrated, (green) Calibrated'')'}); 
-sliderDisplayImVC2(abs(FI), cat(3,[freqXY radP.*ones(numImg,1)],[freqXY2 rad_cal.*ones(numImg,1)]),{'caxis([0 1e6])','title(''All Images: (red) Uncalibrated, (green) Calibrated'')'}); 
-
+sliderDisplayImVC2(abs(FI(:,:,~DFI)), cat(3,[freqXY(~DFI,:) radP.*ones(sum(~DFI),1)],[freqXY2(~DFI,:) rad_cal.*ones(sum(~DFI),1)]),{'caxis([0 1e6])','title(''Brightfield Only: (red) Uncalibrated, (green) Calibrated'')'});
+sliderDisplayImVC2(abs(FI), cat(3,[freqXY radP.*ones(numImg,1)],[freqXY2 rad_cal.*ones(numImg,1)]),{'caxis([0 1e6])','title(''All Images: (red) Uncalibrated, (green) Calibrated'')'});
